@@ -8,7 +8,7 @@
 
 import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
-import { authOptions } from '@/app/api/auth/[...nextauth]/route';
+import { authOptions } from '@/lib/auth';
 import { prisma } from '@/lib/prisma';
 import { validateCalendarDate, validateDedicationText, sanitizeDedicationText } from '@/lib/validation';
 import { createAuditLog, AUDIT_ACTIONS } from '@/lib/auditLog';

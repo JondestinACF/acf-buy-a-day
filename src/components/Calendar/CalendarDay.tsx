@@ -31,9 +31,9 @@ const STATUS_CONFIG = {
     ariaLabel: (d: string) => `${d} — Sold`,
   },
   ADMIN_HOLD: {
-    bg: 'bg-acf-red-light cursor-not-allowed',
-    text: 'text-acf-red',
-    dot: 'bg-acf-red',
+    bg: 'bg-red-50 cursor-not-allowed',
+    text: 'text-red-400',
+    dot: 'bg-red-300',
     label: 'Not Available',
     ariaLabel: (d: string) => `${d} — Not Available`,
   },

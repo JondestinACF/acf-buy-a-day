@@ -5,7 +5,7 @@
  * Also used as a fallback when payment_intent.status is in URL.
  */
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, Suspense } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { format } from 'date-fns';
@@ -19,7 +19,7 @@ interface OrderInfo {
   paidAt: string;
 }
 
-export default function ConfirmationPage() {
+function ConfirmationContent() {
   const searchParams = useSearchParams();
   const paymentIntentId = searchParams.get('payment_intent');
   const redirectStatus = searchParams.get('redirect_status');
@@ -28,7 +28,6 @@ export default function ConfirmationPage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // If redirected from Stripe, fetch order info via payment intent
     if (paymentIntentId) {
       fetchOrderByPaymentIntent(paymentIntentId).then(setOrder).finally(() => setLoading(false));
     } else {
@@ -37,7 +36,6 @@ export default function ConfirmationPage() {
   }, [paymentIntentId]);
 
   async function fetchOrderByPaymentIntent(piId: string): Promise<OrderInfo | null> {
-    // Poll a few times to allow webhook to process
     for (let i = 0; i < 8; i++) {
       await new Promise((r) => setTimeout(r, 1000));
       try {
@@ -89,7 +87,6 @@ export default function ConfirmationPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-acf-blue-light to-gray-50">
-      {/* Header */}
       <header className="bg-acf-blue shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
           <div className="flex items-center gap-3">
@@ -105,7 +102,6 @@ export default function ConfirmationPage() {
 
       <main className="max-w-lg mx-auto px-4 py-16">
         <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          {/* Success banner */}
           <div className="bg-acf-green px-6 pt-8 pb-6 text-center">
             <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto mb-4">
               <svg className="w-9 h-9 text-acf-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -144,6 +140,14 @@ export default function ConfirmationPage() {
         </p>
       </main>
     </div>
+  );
+}
+
+export default function ConfirmationPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-gradient-to-b from-acf-blue-light to-gray-50" />}>
+      <ConfirmationContent />
+    </Suspense>
   );
 }
 

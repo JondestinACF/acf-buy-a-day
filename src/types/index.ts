@@ -16,8 +16,6 @@ export interface PublicCalendarDay {
   status: DayStatus;
   dedicationText?: string; // Only present for SOLD days (for display)
   holdExpiresAt?: string;  // ISO string — only if CHECKOUT_HOLD
-  priceInCents: number;    // Price for this specific day (may differ from default)
-  isPremium: boolean;      // True if this is a premium-priced day
 }
 
 // ─── Admin Calendar Day ───────────────────────────────────────────────────────

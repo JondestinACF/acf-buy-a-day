@@ -11,7 +11,6 @@ import { prisma } from '@/lib/prisma';
 import { calendarLimiter, getClientIp } from '@/lib/ratelimit';
 import { createAuditLog, AUDIT_ACTIONS } from '@/lib/auditLog';
 import type { PublicCalendarDay } from '@/types';
-import { getPriceForDate, isPremiumDay } from '@/lib/premiumDays';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -80,19 +79,13 @@ export async function GET(request: Request) {
       },
     });
 
-    const defaultPrice = settings?.priceInCents ?? 10000;
-    const publicDays: PublicCalendarDay[] = days.map((day) => {
-      const dateStr = day.date.toISOString().split('T')[0];
-      return {
-        id: day.id,
-        date: dateStr,
-        status: day.status as PublicCalendarDay['status'],
-        dedicationText: day.status === 'SOLD' ? (day.dedicationText ?? undefined) : undefined,
-        holdExpiresAt: day.status === 'CHECKOUT_HOLD' ? day.holdExpiresAt?.toISOString() : undefined,
-        priceInCents: getPriceForDate(dateStr, defaultPrice),
-        isPremium: isPremiumDay(dateStr),
-      };
-    });
+    const publicDays: PublicCalendarDay[] = days.map((day) => ({
+      id: day.id,
+      date: day.date.toISOString().split('T')[0],
+      status: day.status as PublicCalendarDay['status'],
+      dedicationText: day.status === 'SOLD' ? (day.dedicationText ?? undefined) : undefined,
+      holdExpiresAt: day.status === 'CHECKOUT_HOLD' ? day.holdExpiresAt?.toISOString() : undefined,
+    }));
 
     // Check if sales are open
     const salesStatus = getSalesStatus(settings);

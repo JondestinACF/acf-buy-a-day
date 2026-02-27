@@ -11,7 +11,6 @@ import { NextResponse } from 'next/server';
 import { stripe } from '@/lib/stripe';
 import { prisma } from '@/lib/prisma';
 import { buyerInfoSchema, validateCalendarDate, validateDedicationText, sanitizeDedicationText } from '@/lib/validation';
-import { getPriceForDate } from '@/lib/premiumDays';
 import { paymentIntentLimiter, getClientIp } from '@/lib/ratelimit';
 import type { PaymentIntentResponse } from '@/types';
 
@@ -59,8 +58,7 @@ export async function POST(request: Request) {
 
   // Get admin settings
   const settings = await prisma.adminSettings.findUnique({ where: { id: 'singleton' } });
-  const defaultPrice = settings?.priceInCents ?? 10000;
-  const priceInCents = getPriceForDate(date, defaultPrice);
+  const priceInCents = settings?.priceInCents ?? 10000;
 
   // Validate dedication text with current settings
   const dedicationValidation = validateDedicationText(

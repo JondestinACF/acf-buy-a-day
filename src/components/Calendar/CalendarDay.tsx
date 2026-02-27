@@ -122,15 +122,10 @@ export default function CalendarDay({ day, onSelect, isSelected }: CalendarDayPr
         </span>
       )}
 
-      {/* Premium star indicator */}
-      {day.isPremium && isAvailable && (
-        <span className="absolute top-0.5 right-0.5 text-[8px]">⭐</span>
-      )}
-
       {/* Hover price hint for available days */}
       {isAvailable && (
         <span className="absolute inset-0 flex items-end justify-center pb-1 opacity-0 group-hover:opacity-100 transition-opacity">
-          <span className="text-[8px] text-acf-blue font-semibold">${(day.priceInCents / 100).toFixed(0)}</span>
+          <span className="text-[8px] text-acf-blue font-semibold">$100</span>
         </span>
       )}
     </div>

@@ -165,10 +165,6 @@ export default function Calendar({ onSelectDay, selectedDate }: CalendarProps) {
           label={`Available — ${priceDisplay}`}
         />
         <LegendItem
-          color="bg-white border border-gray-200"
-          label="⭐ Premium — $250"
-        />
-        <LegendItem
           color="bg-gray-100 border border-gray-200"
           dotColor="bg-gray-400"
           label="Sold"

@@ -56,7 +56,7 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
             {[
               { step: '1', icon: '📅', title: 'Pick Your Date', desc: 'Choose any available day from the calendar below.' },
-              { step: '2', icon: '✏️', title: 'Add a Dedication', desc: 'Up to 20 characters printed on your calendar day.' },
+              { step: '2', icon: '✏️', title: 'Add a Dedication', desc: 'Up to 26 characters printed on your calendar day.' },
               { step: '3', icon: '💙', title: 'Support ACF', desc: 'Your $100 donation funds grants across Albany.' },
             ].map(({ step, icon, title, desc }) => (
               <div key={step} className="bg-white/10 border border-white/20 rounded-xl p-5 text-left">

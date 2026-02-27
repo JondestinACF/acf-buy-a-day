@@ -126,7 +126,7 @@ export default function Calendar({ onSelectDay, selectedDate }: CalendarProps) {
         <div className="flex flex-wrap gap-4 text-sm">
           <StatChip color="bg-white border border-gray-200" count={stats.available} label="Available" />
           <StatChip color="bg-gray-100 border border-gray-200" count={stats.sold} label="Sold" />
-          <StatChip color="bg-amber-50 border border-amber-200" count={stats.held} label="On Hold" />
+          <StatChip color="bg-acf-red-light border border-acf-red" count={stats.held} label="Not Available" />
         </div>
 
         {/* View toggle */}
@@ -170,9 +170,9 @@ export default function Calendar({ onSelectDay, selectedDate }: CalendarProps) {
           label="Sold"
         />
         <LegendItem
-          color="bg-amber-50 border border-amber-200"
-          dotColor="bg-amber-400"
-          label="Admin Hold"
+          color="bg-acf-red-light border border-acf-red"
+          dotColor="bg-acf-red"
+          label="Not Available"
         />
       </div>
 

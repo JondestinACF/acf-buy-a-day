@@ -15,6 +15,7 @@
     "db:seed": "tsx prisma/seed.ts",
     "db:studio": "prisma studio",
     "create-admin": "tsx scripts/create-admin.ts",
+    "reset-password": "tsx scripts/reset-password.ts",
     "block-holidays": "tsx scripts/block-holidays.ts",
     "block-first-mondays": "tsx scripts/block-first-mondays.ts",
     "reset-holds": "tsx scripts/reset-holds.ts",

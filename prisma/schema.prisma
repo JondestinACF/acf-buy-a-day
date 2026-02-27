@@ -1,0 +1,117 @@
+// This is your Prisma schema file.
+// Learn more: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Enums ────────────────────────────────────────────────────────────────────
+
+enum DayStatus {
+  AVAILABLE
+  CHECKOUT_HOLD  // Temporary hold while someone is in checkout (expires)
+  SOLD           // Payment confirmed via Stripe webhook
+  ADMIN_HOLD     // Manually held by admin (board use, sponsor conflicts, etc.)
+}
+
+// ─── Calendar Day ─────────────────────────────────────────────────────────────
+
+model CalendarDay {
+  id                    String    @id @default(cuid())
+  /// Stored as midnight UTC for the given date (e.g., 2027-01-15T00:00:00Z)
+  date                  DateTime  @unique
+  status                DayStatus @default(AVAILABLE)
+
+  // Dedication text entered by buyer
+  dedicationText        String?   @db.VarChar(20)
+
+  // Buyer information (populated after successful payment)
+  buyerFirstName        String?
+  buyerLastName         String?
+  buyerEmail            String?
+  buyerPhone            String?
+  billingAddress        Json?     // { line1, line2, city, state, postal_code, country }
+  contactOptIn          Boolean   @default(false)
+
+  // Payment details
+  stripePaymentIntentId String?   @unique
+  orderId               String?   @unique  // Human-readable order number (e.g., ACF-2027-00042)
+  amountPaidCents       Int?      // Amount in cents (e.g., 10000 = $100.00)
+  paidAt                DateTime?
+
+  // Checkout hold details (for CHECKOUT_HOLD status)
+  holdToken             String?   // UUID matching the buyer's session token
+  holdExpiresAt         DateTime? // When the hold expires (default: 10 min from creation)
+
+  // Admin hold note
+  adminNote             String?
+
+  createdAt             DateTime  @default(now())
+  updatedAt             DateTime  @updatedAt
+
+  // Relations
+  auditLogs             AuditLog[]
+
+  @@index([status])
+  @@index([date])
+  @@index([holdExpiresAt])
+  @@map("calendar_days")
+}
+
+// ─── Audit Log ────────────────────────────────────────────────────────────────
+
+model AuditLog {
+  id              String      @id @default(cuid())
+  calendarDayId   String
+  calendarDay     CalendarDay @relation(fields: [calendarDayId], references: [id], onDelete: Cascade)
+
+  /// Action type: STATUS_CHANGE | TEXT_EDIT | HOLD_CREATED | HOLD_RELEASED |
+  ///              REFUND_ISSUED | PAYMENT_RECEIVED | CHECKOUT_HOLD_EXPIRED
+  action          String
+  oldValue        Json?       // Serialized snapshot of changed fields before
+  newValue        Json?       // Serialized snapshot of changed fields after
+  performedBy     String      // "system", admin email, or "customer:email@example.com"
+  ipAddress       String?
+  notes           String?     // Optional human-readable note
+  createdAt       DateTime    @default(now())
+
+  @@index([calendarDayId])
+  @@index([createdAt])
+  @@map("audit_logs")
+}
+
+// ─── Admin Settings (singleton row) ──────────────────────────────────────────
+
+model AdminSettings {
+  id                  String    @id @default("singleton")
+  emojisAllowed       Boolean   @default(false)
+  textRequired        Boolean   @default(false)
+  priceInCents        Int       @default(10000)  // $100.00
+  calendarYear        Int       @default(2027)
+  salesStartDate      DateTime?
+  salesEndDate        DateTime?
+  acfAdminEmail       String    @default("admin@albanycf.org")
+  updatedAt           DateTime  @updatedAt
+  updatedBy           String?   // Admin email who last changed settings
+
+  @@map("admin_settings")
+}
+
+// ─── Admin Users ──────────────────────────────────────────────────────────────
+
+model AdminUser {
+  id            String    @id @default(cuid())
+  email         String    @unique
+  passwordHash  String
+  name          String
+  role          String    @default("admin")   // "admin" | "superadmin"
+  createdAt     DateTime  @default(now())
+  lastLoginAt   DateTime?
+
+  @@map("admin_users")
+}

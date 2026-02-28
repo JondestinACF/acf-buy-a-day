@@ -26,45 +26,111 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-white">
 
-      {/* ── Hero Section (blue) ──────────────────────────────────────────── */}
-      <section className="bg-acf-blue py-16">
+      {/* ── Nav ────────────────────────────────────────────────────────────── */}
+      <nav className="bg-acf-blue-dark border-b border-white/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+          <span className="text-white font-bold text-sm tracking-wide">
+            Albany Community Foundation · 2027
+          </span>
+          <div className="flex items-center gap-6">
+            <a href="#how-it-works" className="text-blue-200 hover:text-white text-sm transition-colors">
+              How It Works
+            </a>
+            <a href="mailto:info@albanycommunity.org" className="text-blue-200 hover:text-white text-sm transition-colors">
+              Contact
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* ── Hero ───────────────────────────────────────────────────────────── */}
+      <section className="bg-acf-blue-dark py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-2 bg-acf-red text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-            <span>📅</span> Buy a Day — 2027
+
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 border border-acf-gold/50 text-acf-gold px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-8">
+            2027 ACF Community Calendar
           </div>
 
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-5 leading-tight">
-            Dedicate a Day on the<br />
-            <span className="text-acf-blue-light">2027 ACF Community Calendar</span>
+          {/* Headline */}
+          <h1 className="text-5xl sm:text-6xl font-extrabold text-white mb-3 leading-tight">
+            Every Day Has a Story.
           </h1>
+          <h2 className="text-4xl sm:text-5xl font-extrabold italic mb-8 leading-tight" style={{ color: '#c9a227' }}>
+            Which One Will You Tell?
+          </h2>
 
-          <p className="text-blue-100 text-lg max-w-2xl mx-auto leading-relaxed mb-10">
-            Choose any available date and honor a birthday, anniversary, memorial, or milestone
-            — while directly supporting ACF grants and programs that strengthen our community.
+          {/* Body copy */}
+          <p className="text-blue-200 text-lg max-w-2xl mx-auto leading-relaxed mb-10">
+            Albany is full of characters. Tell us yours in just 27 characters.
+            Dedicate a day in the 2027 Community Calendar — choose a date that matters,
+            add your message, and let your $100 gift support the programs that make
+            this city worth celebrating.
           </p>
 
-          {/* Price badge */}
-          <div className="inline-flex items-center gap-4 bg-white/10 border border-white/20 rounded-2xl px-8 py-5 mb-10">
-            <span className="text-5xl font-extrabold text-white">$100</span>
-            <div className="text-left border-l border-white/30 pl-4">
-              <p className="text-white font-semibold">per calendar day</p>
-              <p className="text-blue-200 text-sm mt-0.5">100% tax-deductible</p>
+          {/* Price box */}
+          <div className="inline-flex flex-col sm:flex-row items-center gap-6 bg-white/10 border border-white/20 rounded-2xl px-8 py-6 mb-10">
+            <div className="text-center sm:text-left">
+              <p className="text-5xl font-extrabold text-white">$100</p>
+              <p className="text-blue-200 text-sm mt-1">per day dedicated</p>
+            </div>
+            <div className="border-t sm:border-t-0 sm:border-l border-white/20 pt-4 sm:pt-0 sm:pl-6 text-left space-y-2">
+              {[
+                'Fully tax-deductible',
+                'Printed in the 2027 calendar',
+                'Funds local Albany grants',
+              ].map((item) => (
+                <div key={item} className="flex items-center gap-2 text-sm text-blue-100">
+                  <span className="text-acf-gold font-bold">✓</span>
+                  {item}
+                </div>
+              ))}
             </div>
           </div>
 
-          {/* How it works */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+          {/* CTA */}
+          <div>
+            <a
+              href="#calendar"
+              className="inline-block px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:scale-105"
+              style={{ backgroundColor: '#c9a227', color: '#0e3166' }}
+            >
+              Dedicate a Day →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── How It Works ───────────────────────────────────────────────────── */}
+      <section id="how-it-works" className="bg-gray-50 py-20 border-b border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <p className="text-xs font-bold uppercase tracking-widest text-acf-gold mb-3">How It Works</p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-12">
+            Three Simple Steps to Something Lasting
+          </h2>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
-              { step: '1', icon: '📅', title: 'Pick Your Date', desc: 'Choose any available day from the calendar below.' },
-              { step: '2', icon: '✏️', title: 'Add a Dedication', desc: 'Up to 26 characters printed on your calendar day.' },
-              { step: '3', icon: '💙', title: 'Support ACF', desc: 'Your $100 donation funds grants across Albany.' },
-            ].map(({ step, icon, title, desc }) => (
-              <div key={step} className="bg-white/10 border border-white/20 rounded-xl p-5 text-left">
-                <div className="w-7 h-7 bg-acf-red rounded-full flex items-center justify-center text-white text-xs font-bold mb-3">
-                  {step}
-                </div>
-                <p className="text-white font-semibold mb-1">{icon} {title}</p>
-                <p className="text-blue-200 text-sm leading-relaxed">{desc}</p>
+              {
+                icon: '📅',
+                title: 'Claim Your Date',
+                desc: 'Browse the calendar and select any available day in 2027 — a birthday, anniversary, graduation, or any date that holds meaning for you.',
+              },
+              {
+                icon: '✏️',
+                title: 'Add Your Message',
+                desc: "You've got 27 characters — a name, a milestone, a memory. Make them yours.",
+              },
+              {
+                icon: '🌱',
+                title: 'See It in Print & Support Albany',
+                desc: 'Your $100 donation funds local grants, youth programs, and community initiatives across Albany — and your dedication is immortalized in print.',
+              },
+            ].map(({ icon, title, desc }) => (
+              <div key={title} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-7 text-left">
+                <div className="text-3xl mb-4">{icon}</div>
+                <h3 className="text-lg font-bold text-gray-900 mb-3">{title}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>
@@ -74,10 +140,11 @@ export default function HomePage() {
       {/* ── Calendar Section ─────────────────────────────────────────────── */}
       <section
         id="calendar"
-        className="max-w-7xl mx-auto px-4 sm:px-6 py-12"
+        className="max-w-7xl mx-auto px-4 sm:px-6 py-16"
         aria-label="2027 Community Calendar"
       >
         <div className="mb-8 text-center">
+          <p className="text-xs font-bold uppercase tracking-widest text-acf-gold mb-3">The Calendar</p>
           <h2 className="text-3xl font-extrabold text-gray-900 mb-2">
             Choose Your Day
           </h2>
@@ -91,8 +158,10 @@ export default function HomePage() {
 
       {/* ── Footer ───────────────────────────────────────────────────────── */}
       <footer className="bg-acf-blue-dark text-blue-200 py-8">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center text-xs">
-          <p>© 2025 by Albany Community Foundation, 1164 Solano Ave, Box 133, Albany, CA 94706</p>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center text-xs space-y-1">
+          <p className="font-semibold text-white">Albany Community Foundation</p>
+          <p>1164 Solano Ave, Box 133, Albany, CA 94706</p>
+          <p>© 2027 Albany Community Foundation · All rights reserved</p>
         </div>
       </footer>
 

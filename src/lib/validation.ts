@@ -8,7 +8,7 @@ import { z } from 'zod';
 
 // ─── Constants ─────────────────────────────────────────────────────────────────
 
-export const MAX_DEDICATION_LENGTH = 26;
+export const MAX_DEDICATION_LENGTH = 27;
 export const CALENDAR_YEAR = 2027;
 
 // Regex: letters, numbers, spaces, basic punctuation — NO emojis by default

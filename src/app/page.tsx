@@ -185,7 +185,7 @@ export default function HomePage() {
       <section id="faq" className="bg-acf-blue-dark py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>FAQ</p>
+            <p className="text-3xl sm:text-4xl font-extrabold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>FAQ</p>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
               Questions? We've Got Answers.
             </h2>

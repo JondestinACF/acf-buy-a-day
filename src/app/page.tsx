@@ -36,9 +36,6 @@ export default function HomePage() {
             <a href="#how-it-works" className="text-blue-200 hover:text-white text-sm transition-colors">
               How It Works
             </a>
-            <a href="mailto:info@albanycommunity.org" className="text-blue-200 hover:text-white text-sm transition-colors">
-              Contact
-            </a>
           </div>
         </div>
       </nav>

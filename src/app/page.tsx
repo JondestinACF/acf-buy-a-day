@@ -35,7 +35,7 @@ export default function HomePage() {
     <main className="min-h-screen bg-white">
 
       {/* ── Nav ────────────────────────────────────────────────────────────── */}
-      <nav className="bg-white border-b border-gray-200">
+      <nav className="bg-white border-b border-gray-200 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-0 flex items-center justify-between">
           <a href={ACF_URL} target="_blank" rel="noopener noreferrer"
              className="hover:opacity-80 transition-opacity">
@@ -44,6 +44,9 @@ export default function HomePage() {
           <div className="flex items-center gap-6">
             <a href="#how-it-works" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">
               How It Works
+            </a>
+            <a href="#faq" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">
+              FAQ
             </a>
           </div>
         </div>
@@ -179,7 +182,7 @@ export default function HomePage() {
       </section>
 
       {/* ── FAQ ──────────────────────────────────────────────────────────── */}
-      <section className="bg-acf-blue-dark py-20">
+      <section id="faq" className="bg-acf-blue-dark py-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>FAQ</p>

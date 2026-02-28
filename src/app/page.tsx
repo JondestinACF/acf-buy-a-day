@@ -204,6 +204,73 @@ export default function HomePage() {
         <Calendar onSelectDay={handleSelectDay} selectedDate={selectedDay?.date} />
       </section>
 
+      {/* ── FAQ ──────────────────────────────────────────────────────────── */}
+      <section className="bg-acf-blue-dark py-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>FAQ</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-white">
+              Questions? We've Got Answers.
+            </h2>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: 'What exactly is the 2027 ACF Community Wall Calendar?',
+                a: 'It\'s a real, printed 12-month wall calendar featuring Albany photography and distributed to hundreds of Albany homes, schools, and local businesses. Every dedicated day is printed right on the date for everyone to see throughout the year.',
+              },
+              {
+                q: 'How does dedicating a day work?',
+                a: 'Browse the calendar, pick an available date that means something to you — a birthday, anniversary, milestone, or memory — write a short message (up to 27 characters), and complete your $100 donation. That\'s it. Your dedication is locked in.',
+              },
+              {
+                q: 'What can I write in my dedication?',
+                a: 'Anything meaningful — a name, a celebration, a remembrance. You have 27 characters to work with. Examples: "Happy 50th, Dad!", "In memory of Rosa", "Go Ella at UC Davis!", or "Ben Beats Cancer!"',
+              },
+              {
+                q: 'Is my $100 donation tax-deductible?',
+                a: 'Yes. The Albany Community Foundation is a registered 501(c)(3) nonprofit. Your full $100 donation is tax-deductible and you\'ll receive a confirmation for your records.',
+              },
+              {
+                q: 'Where does my money go?',
+                a: 'Directly to the Albany Community Foundation, which funds local grants, youth programs, and community initiatives right here in Albany. Every dollar stays local.',
+              },
+              {
+                q: 'Can I dedicate more than one day?',
+                a: 'Absolutely — you can dedicate as many days as you like, as long as they\'re available. Each dedication is a separate $100 donation.',
+              },
+              {
+                q: 'What if the date I want is already taken?',
+                a: 'Dates are claimed on a first-come, first-served basis. If your first choice is gone, pick another meaningful date — there are 365 of them!',
+              },
+              {
+                q: 'When will the calendar be printed and distributed?',
+                a: 'The 2027 calendar will be printed and distributed in late 2026 in time for the new year. You\'ll receive an email confirmation once your dedication is secured.',
+              },
+              {
+                q: 'Will I get a copy of the calendar?',
+                a: 'Details on how supporters can obtain copies will be shared by email closer to the print date. Stay tuned!',
+              },
+              {
+                q: 'Who do I contact if I have more questions?',
+                a: 'Reach out to the Albany Community Foundation at 1164 Solano Ave, Box 133, Albany, CA 94706. We\'re happy to help.',
+              },
+            ].map(({ q, a }, i) => (
+              <details key={i} className="group rounded-xl overflow-hidden" style={{ backgroundColor: 'rgba(255,255,255,0.07)' }}>
+                <summary className="flex items-center justify-between gap-4 px-6 py-5 cursor-pointer list-none">
+                  <span className="font-semibold text-white text-sm sm:text-base">{q}</span>
+                  <span className="text-acf-gold text-xl font-bold flex-shrink-0 group-open:rotate-45 transition-transform duration-200">+</span>
+                </summary>
+                <div className="px-6 pb-5 text-blue-200 text-sm leading-relaxed border-t border-white/10 pt-4">
+                  {a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Footer ───────────────────────────────────────────────────────── */}
       <footer className="bg-acf-blue-dark text-blue-200 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center text-xs space-y-1">

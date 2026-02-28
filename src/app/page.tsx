@@ -147,13 +147,12 @@ export default function HomePage() {
                 The Physical Calendar
               </p>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-5 leading-tight">
-                Your words, printed and hung on walls across Albany.
+                A simple way to celebrate Albany and give back.
               </h2>
               <p className="text-gray-500 leading-relaxed mb-6">
-                The 2027 ACF Community Wall Calendar is a real, printed calendar
-                distributed to hundreds of Albany households and businesses. Every
-                dedicated day appears as a navy banner right on the date — your
-                message, visible all year long.
+                The 2027 ACF Community Wall Calendar hangs in hundreds of Albany homes
+                and local businesses all year long. When you dedicate a day, your message
+                appears right on the date, becoming part of the shared rhythm of our town.
               </p>
               <a
                 href="#calendar"

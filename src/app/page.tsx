@@ -235,7 +235,7 @@ export default function HomePage() {
               },
               {
                 q: 'Will I get a copy of the calendar?',
-                a: 'Details on how supporters can obtain copies will be shared by email closer to the print date. Stay tuned!',
+                a: 'Every donor receives one complimentary copy of the 2027 calendar. We\'ll email you with pickup or delivery details once the calendars are printed in late 2026.',
               },
               {
                 q: 'Who do I contact if I have more questions?',

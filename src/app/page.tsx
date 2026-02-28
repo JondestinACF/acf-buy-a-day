@@ -108,52 +108,54 @@ export default function HomePage() {
       </section>
 
       {/* ── How It Works + Mockup ──────────────────────────────────────────── */}
-      <section id="how-it-works" className="bg-acf-blue-dark border-t border-white/10 pb-14">
+      <section id="how-it-works" className="bg-acf-blue-dark border-t border-white/10 py-14">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
 
-          {/* 3 steps */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10 mb-10">
-            {[
-              { number: '1', title: 'Claim Your Date',   desc: 'Pick any available day in 2027 that means something to you.' },
-              { number: '2', title: 'Add Your Message',  desc: '27 characters — a name, a milestone, a memory. Make them count.' },
-              { number: '3', title: 'See It in Print',   desc: 'Your $100 gift funds local Albany programs and your dedication is printed for all to see.' },
-            ].map(({ number, title, desc }) => (
-              <div key={title} className="flex items-start gap-4 px-6 py-8">
-                <div className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-extrabold mt-0.5" style={{ backgroundColor: '#c9a227', color: '#0e3166' }}>
-                  {number}
-                </div>
-                <div>
-                  <h3 className="text-sm font-bold text-white mb-1">{title}</h3>
-                  <p className="text-blue-300 text-xs leading-relaxed">{desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Mockup preview — compact, centered */}
-          <div className="flex flex-col sm:flex-row items-center gap-8 border-t border-white/10 pt-10">
-            <div className="relative flex-shrink-0">
+            {/* Calendar mockup — left */}
+            <div className="relative flex-shrink-0 flex justify-center">
               <img
                 src="/calendar-mockup.jpg"
                 alt="2027 ACF Community Wall Calendar sample"
-                className="rounded-lg shadow-xl"
-                style={{ width: '220px', border: '1px solid rgba(255,255,255,0.1)' }}
+                className="rounded-xl shadow-2xl"
+                style={{ width: '260px', border: '1px solid rgba(255,255,255,0.12)' }}
               />
-              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-xs px-2 py-0.5 rounded-full whitespace-nowrap"
-                   style={{ backgroundColor: 'rgba(0,0,0,0.55)', color: 'rgba(255,255,255,0.8)' }}>
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 text-xs px-3 py-1 rounded-full whitespace-nowrap"
+                   style={{ backgroundColor: 'rgba(0,0,0,0.6)', color: 'rgba(255,255,255,0.75)' }}>
                 Sample mockup
               </div>
             </div>
-            <div>
-              <p className="text-white font-semibold text-base mb-2">A simple way to celebrate Albany and give back.</p>
-              <p className="text-blue-300 text-sm leading-relaxed max-w-lg">
-                The 2027 ACF Community Wall Calendar hangs in about 1,000 Albany homes, schools, and
-                local businesses all year long. When you dedicate a day, your message appears right on
-                the date — becoming part of the shared rhythm of our town.
-              </p>
-            </div>
-          </div>
 
+            {/* Steps — right */}
+            <div className="flex-1">
+              <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: '#c9a227' }}>How It Works</p>
+              <h2 className="text-xl font-extrabold text-white mb-2">A simple way to celebrate Albany and give back.</h2>
+              <p className="text-blue-300 text-sm leading-relaxed mb-8">
+                The 2027 ACF Community Wall Calendar hangs in about 1,000 Albany homes, schools,
+                and local businesses all year long. Dedicate a day and your message is printed right on the date.
+              </p>
+
+              <div className="space-y-5">
+                {[
+                  { n: '1', title: 'Claim Your Date',  desc: 'Pick any available day in 2027 that means something to you.' },
+                  { n: '2', title: 'Add Your Message', desc: '27 characters — a name, a milestone, a memory.' },
+                  { n: '3', title: 'See It in Print',  desc: 'Your $100 gift funds local Albany programs and your dedication is printed for all to see.' },
+                ].map(({ n, title, desc }) => (
+                  <div key={n} className="flex items-start gap-4">
+                    <div className="w-7 h-7 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-extrabold mt-0.5"
+                         style={{ backgroundColor: '#c9a227', color: '#0e3166' }}>
+                      {n}
+                    </div>
+                    <div>
+                      <p className="text-sm font-bold text-white">{title}</p>
+                      <p className="text-blue-300 text-xs leading-relaxed">{desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 

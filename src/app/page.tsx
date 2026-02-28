@@ -108,37 +108,34 @@ export default function HomePage() {
       </section>
 
       {/* ── How It Works ───────────────────────────────────────────────────── */}
-      <section id="how-it-works" className="bg-acf-blue-dark py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>How It Works</p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-12">
-            Three Simple Steps to Something Lasting
-          </h2>
-
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+      <section id="how-it-works" className="bg-acf-blue-dark border-t border-white/10 pb-16">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
             {[
               {
                 number: '1',
                 title: 'Claim Your Date',
-                desc: 'Browse the calendar and select any available day in 2027 — a birthday, anniversary, graduation, or any date that holds meaning for you.',
+                desc: 'Pick any available day in 2027 that means something to you.',
               },
               {
                 number: '2',
                 title: 'Add Your Message',
-                desc: "You've got 27 characters — a name, a milestone, a memory. Make them yours.",
+                desc: '27 characters — a name, a milestone, a memory. Make them count.',
               },
               {
                 number: '3',
-                title: 'See It in Print & Support Albany',
-                desc: 'Your $100 donation funds local grants, youth programs, and community initiatives across Albany — and your dedication is immortalized in print.',
+                title: 'See It in Print',
+                desc: 'Your $100 gift funds local Albany programs and your dedication is printed for all to see.',
               },
             ].map(({ number, title, desc }) => (
-              <div key={title} className="rounded-2xl p-7 text-left border-t-4" style={{ backgroundColor: 'rgba(255,255,255,0.07)', borderTopColor: '#c9a227' }}>
-                <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-extrabold mb-5" style={{ backgroundColor: '#c9a227', color: '#0e3166' }}>
+              <div key={title} className="flex items-start gap-4 px-6 py-8">
+                <div className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-xs font-extrabold mt-0.5" style={{ backgroundColor: '#c9a227', color: '#0e3166' }}>
                   {number}
                 </div>
-                <h3 className="text-lg font-bold text-white mb-3">{title}</h3>
-                <p className="text-blue-200 text-sm leading-relaxed">{desc}</p>
+                <div>
+                  <h3 className="text-sm font-bold text-white mb-1">{title}</h3>
+                  <p className="text-blue-300 text-xs leading-relaxed">{desc}</p>
+                </div>
               </div>
             ))}
           </div>

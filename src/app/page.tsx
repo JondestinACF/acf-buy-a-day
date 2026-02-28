@@ -36,7 +36,7 @@ export default function HomePage() {
 
       {/* ── Nav ────────────────────────────────────────────────────────────── */}
       <nav className="bg-white border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-1.5 flex items-center justify-between">
           <a href={ACF_URL} target="_blank" rel="noopener noreferrer"
              className="hover:opacity-80 transition-opacity">
             <img src="/acf-logo.png" alt="Albany Community Foundation" className="h-28 w-auto" />

@@ -83,7 +83,7 @@ export default function HomePage() {
               { text: 'Happy 50th, Dad!', label: 'Birthday' },
               { text: 'Always in Our Hearts, Dee', label: 'Memorial' },
               { text: '50 Years, Still Dancing', label: 'Anniversary' },
-              { text: 'Welcome, Baby Liam!', label: 'New Arrival' },
+              { text: "Sammy's Day", label: 'Celebration' },
               { text: 'Grateful for Our Teachers', label: 'Evergreen' },
             ].map((ex) => (
               <div key={ex.text} className="bg-white/10 border border-white/15 rounded-lg px-4 py-2.5 text-center">

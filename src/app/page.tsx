@@ -81,10 +81,10 @@ export default function HomePage() {
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             {[
               { text: 'Happy 50th, Dad!', label: 'Birthday' },
-              { text: 'We Miss You, Grandpa Joe', label: 'Memorial' },
+              { text: 'Always in Our Hearts, Dee', label: 'Memorial' },
               { text: '50 Years, Still Dancing', label: 'Anniversary' },
               { text: 'Welcome, Baby Liam!', label: 'New Arrival' },
-              { text: 'Happy Retirement, Coach!', label: 'Celebration' },
+              { text: 'Grateful for Our Teachers', label: 'Evergreen' },
             ].map((ex) => (
               <div key={ex.text} className="bg-white/10 border border-white/15 rounded-lg px-4 py-2.5 text-center">
                 <p className="text-white font-semibold text-sm tracking-wide">&ldquo;{ex.text}&rdquo;</p>

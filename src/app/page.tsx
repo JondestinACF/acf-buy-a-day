@@ -1,6 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
+
+const ACF_URL = 'https://www.albanycommunity.org/whatdowedo-1';
+const ACFLink = ({ children }: { children: React.ReactNode }) => (
+  <a href={ACF_URL} target="_blank" rel="noopener noreferrer"
+     className="underline underline-offset-2 hover:opacity-80 transition-opacity">
+    {children}
+  </a>
+);
 import dynamic from 'next/dynamic';
 import type { PublicCalendarDay } from '@/types';
 
@@ -29,9 +37,10 @@ export default function HomePage() {
       {/* ── Nav ────────────────────────────────────────────────────────────── */}
       <nav className="bg-acf-blue-dark border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
-          <span className="text-white font-bold text-sm tracking-wide">
+          <a href={ACF_URL} target="_blank" rel="noopener noreferrer"
+             className="text-white font-bold text-sm tracking-wide hover:text-blue-200 transition-colors">
             Albany Community Foundation · 2027
-          </span>
+          </a>
           <div className="flex items-center gap-6">
             <a href="#how-it-works" className="text-blue-200 hover:text-white text-sm transition-colors">
               How It Works
@@ -218,7 +227,7 @@ export default function HomePage() {
             {[
               {
                 q: 'What exactly is the 2027 ACF Community Wall Calendar?',
-                a: 'It\'s a real, printed 12-month wall calendar featuring Albany photography and distributed to hundreds of Albany homes, schools, and local businesses. Every dedicated day is printed right on the date for everyone to see throughout the year.',
+                a: 'It\'s a printed 12-month wall calendar featuring Albany photography, hung in about 1,000 Albany homes, schools, and local businesses all year long. Every dedicated day is printed right on the date for everyone to see throughout the year.',
               },
               {
                 q: 'How does dedicating a day work?',
@@ -238,11 +247,11 @@ export default function HomePage() {
               },
               {
                 q: 'Is my $100 donation tax-deductible?',
-                a: 'Yes. The Albany Community Foundation is a registered 501(c)(3) nonprofit. Your full $100 donation is tax-deductible and you\'ll receive a confirmation for your records.',
+                a: (<>Yes. The <ACFLink>Albany Community Foundation</ACFLink> is a registered 501(c)(3) nonprofit. Your full $100 donation is tax-deductible and you&apos;ll receive a confirmation for your records.</>),
               },
               {
                 q: 'Where does my money go?',
-                a: 'Directly to the Albany Community Foundation, which funds local grants, youth programs, and community initiatives right here in Albany. Every dollar stays local.',
+                a: (<>Directly to the <ACFLink>Albany Community Foundation</ACFLink>, which funds local grants, youth programs, and community initiatives right here in Albany. Every dollar stays local.</>),
               },
               {
                 q: 'Can I dedicate more than one day?',
@@ -282,7 +291,10 @@ export default function HomePage() {
       {/* ── Footer ───────────────────────────────────────────────────────── */}
       <footer className="bg-acf-blue-dark text-blue-200 py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center text-xs space-y-1">
-          <p className="font-semibold text-white">Albany Community Foundation</p>
+          <a href={ACF_URL} target="_blank" rel="noopener noreferrer"
+             className="font-semibold text-white hover:text-blue-200 transition-colors">
+            Albany Community Foundation
+          </a>
           <p>1164 Solano Ave, Box 133, Albany, CA 94706</p>
           <p>© 2027 Albany Community Foundation · All rights reserved</p>
         </div>

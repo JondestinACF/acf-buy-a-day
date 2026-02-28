@@ -94,7 +94,10 @@ function ConfirmationContent() {
               <span className="text-acf-blue font-black text-sm">ACF</span>
             </div>
             <div>
-              <p className="text-white font-bold text-sm">Albany Community Foundation</p>
+              <a href="https://www.albanycommunity.org/whatdowedo-1" target="_blank" rel="noopener noreferrer"
+                 className="text-white font-bold text-sm hover:text-blue-200 transition-colors">
+                Albany Community Foundation
+              </a>
             </div>
           </div>
         </div>
@@ -181,7 +184,7 @@ function GenericConfirmation() {
   return (
     <div className="text-center py-4">
       <p className="text-gray-600 text-sm mb-4">
-        Your donation to the Albany Community Foundation has been received.
+        Your donation to the <a href="https://www.albanycommunity.org/whatdowedo-1" target="_blank" rel="noopener noreferrer" className="underline hover:opacity-80">Albany Community Foundation</a> has been received.
         Your day on the 2027 ACF Community Calendar is confirmed!
       </p>
       <p className="text-gray-500 text-sm mb-4">

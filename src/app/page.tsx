@@ -77,6 +77,22 @@ export default function HomePage() {
             this city worth celebrating.
           </p>
 
+          {/* Example dedications */}
+          <div className="flex flex-wrap justify-center gap-3 mb-10">
+            {[
+              { text: 'Happy 50th, Dad!', label: 'Birthday' },
+              { text: 'We Miss You, Grandpa Joe', label: 'Memorial' },
+              { text: '50 Years, Still Dancing', label: 'Anniversary' },
+              { text: 'Welcome, Baby Liam!', label: 'New Arrival' },
+              { text: 'Happy Retirement, Coach!', label: 'Celebration' },
+            ].map((ex) => (
+              <div key={ex.text} className="bg-white/10 border border-white/15 rounded-lg px-4 py-2.5 text-center">
+                <p className="text-white font-semibold text-sm tracking-wide">&ldquo;{ex.text}&rdquo;</p>
+                <p className="text-xs mt-1" style={{ color: '#c9a227' }}>{ex.label}</p>
+              </div>
+            ))}
+          </div>
+
           {/* Price box */}
           <div className="inline-flex flex-col sm:flex-row items-center gap-6 bg-white/10 border border-white/20 rounded-2xl px-8 py-6 mb-10">
             <div className="text-center sm:text-left">

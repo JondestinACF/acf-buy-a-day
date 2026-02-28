@@ -39,7 +39,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <a href={ACF_URL} target="_blank" rel="noopener noreferrer"
              className="hover:opacity-80 transition-opacity flex items-center">
-            <img src="/acf-logo.svg" alt="Albany Community Foundation" className="h-10 w-auto" />
+            <img src="/acf-logo.png" alt="Albany Community Foundation" className="h-14 w-auto" />
           </a>
           <div className="flex items-center gap-6">
             <a href="#how-it-works" className="text-blue-200 hover:text-white text-sm transition-colors">

@@ -46,7 +46,7 @@ export default function HomePage() {
 
           {/* Badge */}
           <div className="inline-flex items-center gap-2 border border-acf-gold/50 text-acf-gold px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-8">
-            2027 ACF Community Calendar
+            2027 ACF Community Wall Calendar
           </div>
 
           {/* Headline */}
@@ -60,7 +60,7 @@ export default function HomePage() {
           {/* Body copy */}
           <p className="text-blue-200 text-lg max-w-2xl mx-auto leading-relaxed mb-10">
             Albany is full of characters. Tell us yours in just 27 characters.
-            Dedicate a day in the 2027 Community Calendar — choose a date that matters,
+            Dedicate a day in the 2027 Community Wall Calendar — choose a date that matters,
             add your message, and let your $100 gift support the programs that make
             this city worth celebrating.
           </p>
@@ -74,7 +74,7 @@ export default function HomePage() {
             <div className="border-t sm:border-t-0 sm:border-l border-white/20 pt-4 sm:pt-0 sm:pl-6 text-left space-y-2">
               {[
                 'Fully tax-deductible',
-                'Printed in the 2027 calendar',
+                'Printed in the 2027 wall calendar',
                 'Funds local Albany grants',
               ].map((item) => (
                 <div key={item} className="flex items-center gap-2 text-sm text-blue-100">
@@ -132,6 +132,56 @@ export default function HomePage() {
                 <p className="text-blue-200 text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Calendar Mockup Preview ──────────────────────────────────────── */}
+      <section className="bg-white py-20 border-t border-gray-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+
+            {/* Text */}
+            <div className="lg:w-2/5 text-center lg:text-left">
+              <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>
+                The Physical Calendar
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-5 leading-tight">
+                Your words, printed and hung on walls across Albany.
+              </h2>
+              <p className="text-gray-500 leading-relaxed mb-6">
+                The 2027 ACF Community Wall Calendar is a real, printed calendar
+                distributed to hundreds of Albany households and businesses. Every
+                dedicated day appears as a navy banner right on the date — your
+                message, visible all year long.
+              </p>
+              <a
+                href="#calendar"
+                className="inline-block px-6 py-3 rounded-xl font-bold text-sm transition-all hover:scale-105"
+                style={{ backgroundColor: '#0e3166', color: '#fff' }}
+              >
+                Claim Your Day →
+              </a>
+            </div>
+
+            {/* Mockup image */}
+            <div className="lg:w-3/5 flex justify-center">
+              <div className="relative">
+                <img
+                  src="/calendar-mockup.jpg"
+                  alt="2027 ACF Community Wall Calendar mockup showing May with sample dedications"
+                  className="rounded-xl shadow-2xl w-full max-w-sm lg:max-w-md"
+                  style={{ border: '1px solid rgba(0,0,0,0.08)' }}
+                />
+                <div
+                  className="absolute bottom-4 left-1/2 -translate-x-1/2 text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap"
+                  style={{ backgroundColor: 'rgba(14,49,102,0.85)', color: '#fff' }}
+                >
+                  Sample mockup — final design may vary
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

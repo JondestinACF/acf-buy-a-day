@@ -38,8 +38,12 @@ export default function HomePage() {
       <nav className="bg-acf-blue-dark border-b border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <a href={ACF_URL} target="_blank" rel="noopener noreferrer"
-             className="hover:opacity-80 transition-opacity flex items-center">
-            <img src="/acf-logo.png" alt="Albany Community Foundation" className="h-14 w-auto" />
+             className="hover:opacity-80 transition-opacity flex items-center gap-3">
+            <img src="/acf-circle.png" alt="ACF" className="h-10 w-10" />
+            <div className="leading-tight">
+              <p className="text-white font-bold text-sm tracking-wide">ALBANY COMMUNITY</p>
+              <p className="text-white font-bold text-sm tracking-wide">FOUNDATION</p>
+            </div>
           </a>
           <div className="flex items-center gap-6">
             <a href="#how-it-works" className="text-blue-200 hover:text-white text-sm transition-colors">

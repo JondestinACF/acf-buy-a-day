@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 80" width="280" height="80">
+  <!-- Red circle -->
+  <circle cx="40" cy="40" r="36" fill="#C95C5A"/>
+  <!-- "acf" text inside circle -->
+  <text x="40" y="48" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="700"
+        fill="white" text-anchor="middle" letter-spacing="-0.5">acf</text>
+  <!-- ALBANY -->
+  <text x="88" y="30" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700"
+        fill="white" letter-spacing="2">ALBANY</text>
+  <!-- COMMUNITY -->
+  <text x="88" y="54" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400"
+        fill="white" letter-spacing="2.5">COMMUNITY</text>
+  <!-- FOUNDATION -->
+  <text x="88" y="72" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="400"
+        fill="white" letter-spacing="2.5">FOUNDATION</text>
+</svg>

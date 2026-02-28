@@ -35,14 +35,14 @@ export default function HomePage() {
     <main className="min-h-screen bg-white">
 
       {/* ── Nav ────────────────────────────────────────────────────────────── */}
-      <nav className="bg-acf-blue-dark border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
+      <nav className="bg-white border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
           <a href={ACF_URL} target="_blank" rel="noopener noreferrer"
-             className="text-white font-bold text-sm tracking-wide hover:text-blue-200 transition-colors">
-            Albany Community Foundation · 2027
+             className="hover:opacity-80 transition-opacity">
+            <img src="/acf-logo.png" alt="Albany Community Foundation" className="h-12 w-auto" />
           </a>
           <div className="flex items-center gap-6">
-            <a href="#how-it-works" className="text-blue-200 hover:text-white text-sm transition-colors">
+            <a href="#how-it-works" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">
               How It Works
             </a>
           </div>

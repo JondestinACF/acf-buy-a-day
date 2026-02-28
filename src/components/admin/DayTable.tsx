@@ -320,10 +320,10 @@ export default function DayTable({ onRefresh }: DayTableProps) {
         <Modal title={`Edit Dedication — ${editDay.date}`} onClose={() => setEditDay(null)}>
           <p className="text-sm text-gray-600 mb-4">Changes are logged in the audit trail.</p>
           <label className="block text-sm font-medium text-gray-700 mb-1">Dedication Text</label>
-          <input type="text" value={editText} onChange={(e) => setEditText(e.target.value.slice(0, 26))}
-            maxLength={26}
+          <input type="text" value={editText} onChange={(e) => setEditText(e.target.value.slice(0, 27))}
+            maxLength={27}
             className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm mb-1 focus:ring-2 focus:ring-acf-blue focus:outline-none" />
-          <p className="text-xs text-gray-400 mb-4">{editText.length}/26 characters</p>
+          <p className="text-xs text-gray-400 mb-4">{editText.length}/27 characters</p>
           <div className="flex gap-2 justify-end">
             <button onClick={() => setEditDay(null)} className="px-4 py-2 border border-gray-200 rounded-lg text-sm hover:bg-gray-50">Cancel</button>
             <button onClick={handleEditSave} disabled={editLoading}

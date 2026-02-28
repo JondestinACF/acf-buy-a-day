@@ -229,6 +229,14 @@ export default function HomePage() {
                 a: 'Anything meaningful — a name, a celebration, a remembrance. You have 27 characters to work with. Examples: "Happy 50th, Dad!", "In memory of Rosa", "Go Ella at UC Davis!", or "Ben Beats Cancer!"',
               },
               {
+                q: 'Are there any restrictions on what I can say?',
+                a: 'Yes. Dedications must be personal, positive, and community-friendly. We don\'t allow messages that are political, religious, promotional, or that could be considered controversial or offensive. Think of it this way — if it would make a neighbor smile, it\'s probably just right. All dedications are reviewed by our team before being finalized.',
+              },
+              {
+                q: 'What happens after I submit my dedication?',
+                a: 'You\'ll receive an immediate email confirming that your card was charged and your request is under review. However, your dedication is not official until you receive a second confirmation email from us. We personally review every submission to make sure it meets our community guidelines — typically within a few business days.',
+              },
+              {
                 q: 'Is my $100 donation tax-deductible?',
                 a: 'Yes. The Albany Community Foundation is a registered 501(c)(3) nonprofit. Your full $100 donation is tax-deductible and you\'ll receive a confirmation for your records.',
               },
@@ -254,7 +262,7 @@ export default function HomePage() {
               },
               {
                 q: 'Who do I contact if I have more questions?',
-                a: 'Reach out to the Albany Community Foundation at 1164 Solano Ave, Box 133, Albany, CA 94706. We\'re happy to help.',
+                a: 'Email us anytime at acf@albanycommunity.org and we\'ll get back to you as soon as we can.',
               },
             ].map(({ q, a }, i) => (
               <details key={i} className="group rounded-xl overflow-hidden" style={{ backgroundColor: 'rgba(255,255,255,0.07)' }}>

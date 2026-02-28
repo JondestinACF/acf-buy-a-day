@@ -99,35 +99,37 @@ export default function HomePage() {
       </section>
 
       {/* ── How It Works ───────────────────────────────────────────────────── */}
-      <section id="how-it-works" className="bg-gray-50 py-20 border-b border-gray-100">
+      <section id="how-it-works" className="bg-acf-blue-dark py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <p className="text-xs font-bold uppercase tracking-widest text-acf-gold mb-3">How It Works</p>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-12">
+          <p className="text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#c9a227' }}>How It Works</p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white mb-12">
             Three Simple Steps to Something Lasting
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             {[
               {
-                icon: '📅',
+                number: '1',
                 title: 'Claim Your Date',
                 desc: 'Browse the calendar and select any available day in 2027 — a birthday, anniversary, graduation, or any date that holds meaning for you.',
               },
               {
-                icon: '✏️',
+                number: '2',
                 title: 'Add Your Message',
                 desc: "You've got 27 characters — a name, a milestone, a memory. Make them yours.",
               },
               {
-                icon: '🌱',
+                number: '3',
                 title: 'See It in Print & Support Albany',
                 desc: 'Your $100 donation funds local grants, youth programs, and community initiatives across Albany — and your dedication is immortalized in print.',
               },
-            ].map(({ icon, title, desc }) => (
-              <div key={title} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-7 text-left">
-                <div className="text-3xl mb-4">{icon}</div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
+            ].map(({ number, title, desc }) => (
+              <div key={title} className="rounded-2xl p-7 text-left border-t-4" style={{ backgroundColor: 'rgba(255,255,255,0.07)', borderTopColor: '#c9a227' }}>
+                <div className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-extrabold mb-5" style={{ backgroundColor: '#c9a227', color: '#0e3166' }}>
+                  {number}
+                </div>
+                <h3 className="text-lg font-bold text-white mb-3">{title}</h3>
+                <p className="text-blue-200 text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
           </div>

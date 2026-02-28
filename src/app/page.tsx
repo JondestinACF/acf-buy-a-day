@@ -85,6 +85,7 @@ export default function HomePage() {
               { text: '50 Years, Still Dancing', label: 'Anniversary' },
               { text: "Sammy's Day", label: 'Celebration' },
               { text: 'Grateful for Our Teachers', label: 'Evergreen' },
+              { text: 'Thank You, Coach Rivera', label: 'Gratitude' },
             ].map((ex) => (
               <div key={ex.text} className="bg-white/10 border border-white/15 rounded-lg px-4 py-2.5 text-center">
                 <p className="text-white font-semibold text-sm tracking-wide">&ldquo;{ex.text}&rdquo;</p>

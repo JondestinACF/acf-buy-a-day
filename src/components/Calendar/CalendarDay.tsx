@@ -112,15 +112,7 @@ export default function CalendarDay({ day, onSelect, isSelected }: CalendarDayPr
         </span>
       )}
 
-      {/* Dedication text on sold days — truncated */}
-      {day.status === 'SOLD' && day.dedicationText && (
-        <span
-          className="absolute bottom-0 left-0 right-0 text-[7px] text-gray-500 truncate px-0.5 pb-0.5 text-center leading-tight"
-          title={day.dedicationText}
-        >
-          {day.dedicationText}
-        </span>
-      )}
+      {/* Dedication text hidden from calendar grid — visible in admin only */}
 
       {/* Hover price hint for available days */}
       {isAvailable && (

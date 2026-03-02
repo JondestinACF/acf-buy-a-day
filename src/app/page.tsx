@@ -256,7 +256,7 @@ export default function HomePage() {
               },
               {
                 q: 'Who do I contact if I have more questions?',
-                a: 'Email us anytime at acf@albanycommunity.org and we\'ll get back to you as soon as we can.',
+                a: (<>Email us anytime at <a href="mailto:contact@albanycommunityfoundation.org" className="underline text-white hover:text-acf-gold transition-colors">contact@albanycommunityfoundation.org</a> and we&apos;ll get back to you as soon as we can.</>),
               },
             ].map(({ q, a }, i) => (
               <details key={i} className="group rounded-xl overflow-hidden" style={{ backgroundColor: 'rgba(255,255,255,0.07)' }}>

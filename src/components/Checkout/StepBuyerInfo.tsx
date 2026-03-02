@@ -60,7 +60,7 @@ export default function StepBuyerInfo({ initialData, onNext, onBack }: StepBuyer
     line1: initialData.billingAddress?.line1 ?? '',
     line2: initialData.billingAddress?.line2 ?? '',
     city: initialData.billingAddress?.city ?? '',
-    state: initialData.billingAddress?.state ?? 'NY',
+    state: initialData.billingAddress?.state ?? 'CA',
     postal_code: initialData.billingAddress?.postal_code ?? '',
     country: initialData.billingAddress?.country ?? 'US',
     contactOptIn: initialData.contactOptIn ?? false,

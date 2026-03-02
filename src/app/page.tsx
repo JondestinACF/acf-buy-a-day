@@ -71,7 +71,6 @@ export default function HomePage() {
 
           {/* Body copy */}
           <p className="text-blue-200 text-lg max-w-2xl mx-auto leading-relaxed mb-10">
-            Albany is full of characters. Tell us yours in just 27 characters.
             Dedicate a day in the 2027 Community Wall Calendar — choose a date that matters,
             add your message, and let your $100 gift support the programs that make
             this city worth celebrating.
@@ -152,7 +151,7 @@ export default function HomePage() {
               <h2 className="text-xl font-extrabold text-white mb-2">A simple way to celebrate Albany and give back.</h2>
               <p className="text-blue-300 text-sm leading-relaxed mb-8">
                 The 2027 ACF Community Wall Calendar hangs in about 1,000 Albany homes, schools,
-                and local businesses all year long. Dedicate a day and your message is printed right on the date.
+                and local businesses all year long. Dedicate a day and your message is printed right on that date.
               </p>
 
               <div className="space-y-5">
@@ -228,7 +227,7 @@ export default function HomePage() {
               },
               {
                 q: 'What happens after I submit my dedication?',
-                a: 'You\'ll receive an immediate email confirming that your card was charged and your request is under review. However, your dedication is not official until you receive a second confirmation email from us. We personally review every submission to make sure it meets our community guidelines — typically within a few business days.',
+                a: 'After you complete your purchase, you\'ll immediately receive an email confirming that your payment was processed and your day has been reserved. Next, our team will quickly review your dedication to ensure it meets our community guidelines and character limit. Once approved, you\'ll receive a second email from the Albany Community Foundation confirming that your dedication is officially set. If we have any questions, we\'ll reach out directly.',
               },
               {
                 q: 'Is my $100 donation tax-deductible?',
@@ -243,12 +242,16 @@ export default function HomePage() {
                 a: 'Absolutely — you can dedicate as many days as you like, as long as they\'re available. Each dedication is a separate $100 donation.',
               },
               {
+                q: 'What if I want to change my dedication?',
+                a: (<>Plans change, we get it. You can update your dedication anytime through June 1, 2026, before the calendar is finalized for printing. Just email <a href="mailto:contact@albanycommunityfoundation.org" className="underline text-white hover:text-acf-gold transition-colors">contact@albanycommunityfoundation.org</a> and we&apos;ll help you make the update.</>),
+              },
+              {
                 q: 'What if the date I want is already taken?',
                 a: 'Dates are claimed on a first-come, first-served basis. If your first choice is gone, pick another meaningful date — there are 365 of them!',
               },
               {
                 q: 'When will the calendar be printed and distributed?',
-                a: 'The 2027 calendar will be printed and distributed in late 2026 in time for the new year. You\'ll receive an email confirmation once your dedication is secured.',
+                a: 'The 2027 calendar will be printed and distributed in late 2026 in time for the new year.',
               },
               {
                 q: 'Will I get a copy of the calendar?',

@@ -28,7 +28,7 @@ model CalendarDay {
   status                DayStatus @default(AVAILABLE)
 
   // Dedication text entered by buyer
-  dedicationText        String?   @db.VarChar(20)
+  dedicationText        String?   @db.VarChar(30)
 
   // Buyer information (populated after successful payment)
   buyerFirstName        String?

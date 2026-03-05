@@ -132,7 +132,7 @@ function PaymentForm({ date, amountCents, buyerData, onSuccess, onBack }: Paymen
   const [processing, setProcessing] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const appUrl = process.env.NEXT_PUBLIC_APP_URL || '';
+  const appUrl = process.env.NEXT_PUBLIC_APP_URL || (typeof window !== 'undefined' ? window.location.origin : 'https://2027.albanycommunity.org');
   const price = `$${(amountCents / 100).toFixed(0)}`;
   const [year, month, day] = date.split('-').map(Number);
   const dateDisplay = new Date(year, month - 1, day).toLocaleDateString('en-US', {

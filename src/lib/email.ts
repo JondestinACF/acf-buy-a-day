@@ -10,7 +10,7 @@ import { format } from 'date-fns';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const FROM = process.env.SMTP_FROM || 'Albany Community Foundation <onboarding@resend.dev>';
-const ACF_ADMIN_EMAIL = process.env.ACF_ADMIN_EMAIL || 'destin@albanycommunityfoundation.org';
+const ACF_ADMIN_EMAIL = process.env.ACF_ADMIN_EMAIL || 'calendar@albanycommunityfoundation.org';
 const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────

@@ -243,7 +243,7 @@ export default function HomePage() {
               },
               {
                 q: 'What if I want to change my dedication?',
-                a: (<>Plans change, we get it. You can update your dedication anytime through June 1, 2026, before the calendar is finalized for printing. Just email <a href="mailto:contact@albanycommunityfoundation.org" className="underline text-white hover:text-acf-gold transition-colors">contact@albanycommunityfoundation.org</a> and we&apos;ll help you make the update.</>),
+                a: (<>Plans change, we get it. You can update your dedication anytime through June 1, 2026, before the calendar is finalized for printing. Just email <a href="mailto:calendar@albanycommunityfoundation.org" className="underline text-white hover:text-acf-gold transition-colors">calendar@albanycommunityfoundation.org</a> and we&apos;ll help you make the update.</>),
               },
               {
                 q: 'What if the date I want is already taken?',
@@ -259,7 +259,7 @@ export default function HomePage() {
               },
               {
                 q: 'Who do I contact if I have more questions?',
-                a: (<>Email us anytime at <a href="mailto:contact@albanycommunityfoundation.org" className="underline text-white hover:text-acf-gold transition-colors">contact@albanycommunityfoundation.org</a> and we&apos;ll get back to you as soon as we can.</>),
+                a: (<>Email us anytime at <a href="mailto:calendar@albanycommunityfoundation.org" className="underline text-white hover:text-acf-gold transition-colors">calendar@albanycommunityfoundation.org</a> and we&apos;ll get back to you as soon as we can.</>),
               },
             ].map(({ q, a }, i) => (
               <details key={i} className="group rounded-xl overflow-hidden" style={{ backgroundColor: 'rgba(255,255,255,0.07)' }}>

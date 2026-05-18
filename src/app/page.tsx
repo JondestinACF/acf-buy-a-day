@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 import type { PublicCalendarDay } from '@/types';
 
-const ACF_URL = 'https://www.albanycommunity.org/whatdowedo-1';
+const ACF_URL = 'https://www.albanycommunity.org';
 const ACFLink = ({ children }: { children: React.ReactNode }) => (
   <a href={ACF_URL} target="_blank" rel="noopener noreferrer"
      className="underline underline-offset-2 hover:opacity-80 transition-opacity">

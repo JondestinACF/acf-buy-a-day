@@ -20,10 +20,9 @@ export default function HomePage() {
   const [showCheckout, setShowCheckout] = useState(false);
   const [priceInCents] = useState(10000);
 
-  const handleSelectDay = (day: PublicCalendarDay) => {
-    if (day.status !== 'AVAILABLE') return;
-    setSelectedDay(day);
-    setShowCheckout(true);
+  const handleSelectDay = (_day: PublicCalendarDay) => {
+    // Sales closed — checkout disabled
+    return;
   };
 
   const handleCloseCheckout = () => {
@@ -63,65 +62,23 @@ export default function HomePage() {
 
           {/* Headline */}
           <h1 className="text-5xl sm:text-6xl font-extrabold text-white mb-3 leading-tight">
-            Every Day Has a Story.
+            Thank You, Albany!
           </h1>
           <h2 className="text-4xl sm:text-5xl font-extrabold italic mb-8 leading-tight" style={{ color: '#c9a227' }}>
-            Which One Will You Tell?
+            Sales Are Now Closed.
           </h2>
 
-          {/* Body copy */}
+          {/* Closed message */}
           <p className="text-blue-200 text-lg max-w-2xl mx-auto leading-relaxed mb-10">
-            Dedicate a day in the 2027 Community Wall Calendar — choose a date that matters,
-            add your message, and let your $100 gift support the programs that make
-            this city worth celebrating.
+            Sales for the 2027 ACF Community Wall Calendar are now closed. Every dedicated day
+            is headed to print — we&apos;re so grateful for your support of Albany&apos;s community programs.
           </p>
 
-          {/* Example dedications */}
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
-            {[
-              { text: 'Happy 50th, Dad!', label: 'Birthday' },
-              { text: 'Always in Our Hearts, Dee', label: 'Memorial' },
-              { text: '50 Years, Still Dancing', label: 'Anniversary' },
-              { text: "Sammy's Day", label: 'Celebration' },
-              { text: 'Grateful for Our Teachers', label: 'Evergreen' },
-              { text: 'Thank You, Coach Rivera', label: 'Gratitude' },
-            ].map((ex) => (
-              <div key={ex.text} className="bg-white/10 border border-white/15 rounded-lg px-4 py-2.5 text-center">
-                <p className="text-white font-semibold text-sm tracking-wide">&ldquo;{ex.text}&rdquo;</p>
-                <p className="text-xs mt-1" style={{ color: '#c9a227' }}>{ex.label}</p>
-              </div>
-            ))}
-          </div>
-
-          {/* Price box */}
-          <div className="inline-flex flex-col sm:flex-row items-center gap-6 bg-white/10 border border-white/20 rounded-2xl px-8 py-6 mb-10">
-            <div className="text-center sm:text-left">
-              <p className="text-5xl font-extrabold text-white">$100</p>
-              <p className="text-blue-200 text-sm mt-1">per day dedicated</p>
-            </div>
-            <div className="border-t sm:border-t-0 sm:border-l border-white/20 pt-4 sm:pt-0 sm:pl-6 text-left space-y-2">
-              {[
-                'Fully tax-deductible',
-                'Printed in the 2027 wall calendar',
-                'Funds local Albany grants',
-              ].map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm text-blue-100">
-                  <span className="text-acf-gold font-bold">✓</span>
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* CTA */}
-          <div>
-            <a
-              href="#calendar"
-              className="inline-block px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl hover:scale-105"
-              style={{ backgroundColor: '#c9a227', color: '#0e3166' }}
-            >
-              Dedicate a Day →
-            </a>
+          {/* Coming soon box */}
+          <div className="inline-flex flex-col items-center gap-3 bg-white/10 border border-acf-gold/40 rounded-2xl px-8 py-6 mb-10">
+            <p className="text-acf-gold font-bold uppercase tracking-widest text-xs">Coming Soon</p>
+            <p className="text-2xl font-extrabold text-white">2028 ACF Community Calendar</p>
+            <p className="text-blue-200 text-sm">Dedications open in January 2027. Check back then to claim your day!</p>
           </div>
         </div>
       </section>
@@ -185,12 +142,12 @@ export default function HomePage() {
         aria-label="2027 Community Calendar"
       >
         <div className="mb-8 text-center">
-          <p className="text-xs font-bold uppercase tracking-widest text-acf-gold mb-3">The Calendar</p>
+          <p className="text-xs font-bold uppercase tracking-widest text-acf-gold mb-3">The 2027 Calendar</p>
           <h2 className="text-3xl font-extrabold text-gray-900 mb-2">
-            Choose Your Day
+            2027 Dedications Are Closed
           </h2>
           <p className="text-gray-500">
-            Select any <span className="font-semibold text-acf-blue">available</span> date to begin.
+            All days shown below have been dedicated. The <span className="font-semibold text-acf-blue">2028 calendar</span> opens in January 2027.
           </p>
         </div>
 
